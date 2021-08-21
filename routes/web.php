@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -37,7 +34,8 @@ Route::get('/first-semester-pq', [App\Http\Controllers\HomeController::class, 'f
 Route::get('/second-semester-pq', [App\Http\Controllers\HomeController::class, 'secondsemester'])->name('secondsemester');
 Route::get('/smart-bot', [App\Http\Controllers\HomeController::class, 'smartbot'])->name('smartbot');
 Route::get('/account-setup', [App\Http\Controllers\HomeController::class, 'accountsetup']);
-
+Route::get('/app-download', [App\Http\Controllers\HomeController::class, 'appdownload'])->name('appdownload');
+// Route::get('/sample', [App\Http\Controllers\HomeController::class, 'sample'])->name('sample');
 
 
 

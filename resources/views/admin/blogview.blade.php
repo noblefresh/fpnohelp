@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
-
+@include('layouts.topnav')
     <div class="content-wrapper pt-4">
         <section class="content">
             <div class="container-fluid">

@@ -338,4 +338,14 @@ class HomeController extends Controller
     public function accountsetup(){
         return view('users.setup');
     }
+
+    // DOWNLOAD APP
+    public function appdownload(){
+        return view('users.mobile');
+    }
+
+     // SAMPLE
+     public function sample(){
+        return view('users.sample');
+    }
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.topnav')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -36,7 +37,7 @@
             <a href="{{route('addpastquestion')}}" class="quickLinkBtn shadow">Add PQ</a>
             <a href="{{route('alldonation')}}" class="quickLinkBtn shadow">Donations</a>
             <a href="{{route('manageblog')}}" class="quickLinkBtn shadow">Blog</a>
-            <a href="{{route('quote')}}" class="quickLinkBtn shadow">Quotes</a>
+            <a href="{{route('bottraining')}}" class="quickLinkBtn shadow">Smart Bot</a>
             <a href="{{route('imagebox')}}" class="quickLinkBtn shadow">Image Box</a>
             <a href="" class="quickLinkBtn shadow">Users</a>
             <a href="{{route('allpqsubscribed')}}" class="quickLinkBtn shadow">Subscription</a>

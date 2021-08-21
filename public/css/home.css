@@ -325,6 +325,10 @@ padding-bottom: 60px;
  }
 }
 
+.mobile-app-content{
+  margin-top: 120px;
+}
+
 /* END */
 
 @media (min-width: 700px) {
@@ -341,6 +345,9 @@ padding-bottom: 60px;
     .margin-b{
       /* padding-top: 100px; */
     }
+    /* .mobile-app-content{
+      margin-top: 20px;
+    } */
 }
 
 @media (min-width: 350px) {
@@ -349,6 +356,11 @@ padding-bottom: 60px;
     bottom:7px; 
     left:10px
   }
-  
+}
+
+@media (max-width: 550px){
+  .mobile-app-content{
+    margin-top: 20px;
+  }
 }
   

@@ -263,7 +263,7 @@ $(document).ready(function(){
             beforeSend:function () {
                 $('#chat-area').append(`<div class="direct-chat-msg">
                     <div class="direct-chat-infos clearfix">
-                        <span class="direct-chat-name float-left">Smart Bot</span>
+                        <span class="direct-chat-name float-left"></span>
                     </div>
                     <img class="direct-chat-img" src="images/bot1.jpg" alt="message user image">
                     <div class="typing-indicator">
@@ -272,33 +272,34 @@ $(document).ready(function(){
                         <span></span>
                     </div>
                     </div>`);
+                    // $('#chat-area').animate({ scrollTop: $('#chat-area')[0].scrollHeight}, "slow");
+
             },
             success:function(data){
                 // console.log(data);
                 $chat_area = ``;
                 data.forEach(chat => {
                     if (chat.user_id == "bot") {
-                        $chat_area += `<div class="direct-chat-msg">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-left">Smart Bot</span>
-                          <span class="direct-chat-timestamp float-right">${moment(chat.created_at).fromNow()}</span>
+                        $chat_area += `<div class="d-flex justify-content-start mb-4">
+                        <div class="img_cont_msg">
+                            <img src="images/bot1.jpg"
+                                class="rounded-circle user_img_msg">
                         </div>
-                        <img class="direct-chat-img" src="images/bot1.jpg" alt="message user image">
-                        <div class="direct-chat-text">
+                        <div class="msg_cotainer">
                             ${chat.message}
+                            <span class="msg_time">${moment(chat.created_at).fromNow()}</span>
                         </div>
-                      </div>`;
+                        </div>`;
                     } else {
-                        $chat_area += `<div class="direct-chat-msg right">
-                        <div class="direct-chat-infos clearfix">
-                          <span class="direct-chat-name float-right">${chat.user.name}</span>
-                          <span class="direct-chat-timestamp float-left">${moment(chat.created_at).fromNow()}</span>
-                        </div>
-                        <img class="direct-chat-img" src="userImage/default.png" alt="message user image">
-                        <div class="direct-chat-text">
+                        $chat_area += `<div class="d-flex justify-content-end mb-4">
+                        <div class="msg_cotainer_send">
                             ${chat.message}
+                            <span class="msg_time_send">${moment(chat.created_at).fromNow()}</span>
                         </div>
-                      </div>`;
+                        <div class="img_cont_msg">
+                            <img src="userImage/default.png" class="rounded-circle user_img_msg">
+                        </div>
+                        </div>`;
                     }
                 });
                 // console.log($chat_area);
@@ -310,40 +311,46 @@ $(document).ready(function(){
             }
         });
     }
-  
-    // SEARCH BOT BRAIN FOR ADMIN
-    $('input[name=searchBotBrain]').on('keyup', function(e){
-        e.preventDefault();
-        $data = $('#searchBotBrain').val();
-
-        // alert($data);
-        
-        $.ajax({
-            type:'get',
-            url:'/searchBotBrain',
-            data:{data:$data},
-            dataType:'JSON',
-            success:function (response) {
-                $botbrain_message = ``;
-                response.forEach(search => {
-                    $botbrain_message = `<li class="list-group-item active">Bot Brain Message</li>
-                    <li class="list-group-item ">
-                        <span class="bg-secondary p-1  rounded">${search.question}</span><br>
-                        <span class="bg-primary p-1 rounded mt-2" style="float: right">${search.answer}</span><br>
-                        <p style="" class="mt-4 mb-0 text-center">
-                            <a href="/edit_bot_message/${search.id}" class="mr-2"> <i class="fas fa-edit text-dark"></i></a>
-                            <a href="/delete_bot_message/${search.id}" class="ml-2"> <i class="fas fa-trash text-danger"></i></a>
-                        </p>
-                    </li>`;
-                });
-                $('#botBrainMessage').html($botbrain_message);
-            },
-            error:function (e,r,error) {
-                console.log("FAILED" + error);
-            }
-        });
-    })
 
     fetchReply();
+    // $('#backTopBottom').trigger('click');
     $('#chat-area').animate({ scrollTop: $('#chat-area')[0].scrollHeight}, "slow");
+
+    // $('.bottomTop').click();
+    // fetchReply();
+
+    // SEARCH BOT BRAIN FOR ADMIN
+    // $('input[name=searchBotBrain]').on('keyup', function(e){
+    //     e.preventDefault();
+    //     $data = $('#searchBotBrain').val();
+
+    //     // alert($data);
+        
+    //     $.ajax({
+    //         type:'get',
+    //         url:'/searchBotBrain',
+    //         data:{data:$data},
+    //         dataType:'JSON',
+    //         success:function (response) {
+    //             $botbrain_message = ``;
+    //             response.forEach(search => {
+    //                 $botbrain_message = `<li class="list-group-item active">Bot Brain Message</li>
+    //                 <li class="list-group-item ">
+    //                     <span class="bg-secondary p-1  rounded">${search.question}</span><br>
+    //                     <span class="bg-primary p-1 rounded mt-2" style="float: right">${search.answer}</span><br>
+    //                     <p style="" class="mt-4 mb-0 text-center">
+    //                         <a href="/edit_bot_message/${search.id}" class="mr-2"> <i class="fas fa-edit text-dark"></i></a>
+    //                         <a href="/delete_bot_message/${search.id}" class="ml-2"> <i class="fas fa-trash text-danger"></i></a>
+    //                     </p>
+    //                 </li>`;
+    //             });
+    //             $('#botBrainMessage').html($botbrain_message);
+    //         },
+    //         error:function (e,r,error) {
+    //             console.log("FAILED" + error);
+    //         }
+    //     });
+    // })
+
+   
 });

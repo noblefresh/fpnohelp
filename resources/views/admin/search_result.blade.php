@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.topnav')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
