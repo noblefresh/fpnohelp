@@ -1,0 +1,40 @@
+.cover{
+    min-height: 100vh;
+}
+.card{
+    width: 350px;
+}
+.input{
+    background: rgb(245, 243, 243);
+    border-radius: 9px;
+}
+input{
+    border: none;
+    background: transparent;
+    padding-right: 4px;
+    padding-left: 27px;
+    color:rgb(143, 147, 150) ;
+    /* height: 40px; */
+    /* text-transform: capitalize; */
+}
+input:focus{
+    outline: none;
+}
+i,span{
+    color: rgb(143, 147, 150);
+}
+.eye{
+    right: 7px;
+    cursor: pointer;
+}
+@media (max-width: 732px) {
+    .card{
+        width: 100vw;
+        border-radius: 0px;
+        border: none;
+        box-shadow: none !important;
+    }
+    .cover{
+        background: #fff !important;
+    }
+}
