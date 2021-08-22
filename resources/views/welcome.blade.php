@@ -143,7 +143,7 @@ FPNO HELP
 
 </div><!--.content-area-->
 
-
+<script src="{{ asset('js/custom.js') }}"></script>
 <script src="assets/js/pwa.js"></script>
 
 <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
@@ -169,6 +169,6 @@ FPNO HELP
 <!-- END CORE TEMPLATE JS - END -->
 
 
-<script src="assets/js/preloader.js"></script>
+{{-- <script src="assets/js/preloader.js"></script> --}}
 </body>
 </html>

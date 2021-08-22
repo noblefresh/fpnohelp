@@ -24,8 +24,11 @@
 <!-- CSS FILES -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+<link rel="manifest" href="assets/images/icons/manifest.json">
 
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/custom.js') }}"></script>
+
 </head>
 <body>
 <!-- Load Facebook SDK for JavaScript -->
