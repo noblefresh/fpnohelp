@@ -21,6 +21,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/home.js') }}"></script>
     <script src="{{ asset('js/moment.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   
     <!-- Styles -->
@@ -613,7 +614,7 @@
       </div>
   </div>
   <!-- Success Modal End -->
-  @if(session('success'))
+  {{-- @if(session('success'))
   <script>
       $('#sucessModal').on('show.bs.modal', function(){
           $('.modalMsg').text("{{ session('success') }}");
@@ -628,7 +629,28 @@
           $('.errorModalMsg').text("{{ session('error') }}");
       });
       $('#errorModal').modal('show');
-      // alert('Thanks for subscribing!');
+  </script>
+  @endif --}}
+
+  @if(session('success'))
+  <script>
+      swal({
+        title: "Bravo",
+        text: "{{ session('success') }}",
+        icon: "success",
+        button: "Ok!",
+      });
+  </script>
+  @endif
+
+  @if(session('error'))
+  <script>
+      swal({
+        title: "Error",
+        text: "{{ session('error') }}",
+        icon: "error",
+        button: "Ok!",
+      });
   </script>
   @endif
 

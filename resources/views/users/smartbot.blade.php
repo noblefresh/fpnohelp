@@ -25,7 +25,7 @@ overflow-y: auto;
 -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
   /* overflow: auto; */
-  padding: 7px 70px;
+  padding: 9px 70px;
   /* margin: 30px 70px; */
   /* bottom: 20 !important; */
   /* height: 70vh !important; */

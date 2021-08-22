@@ -18,6 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->longText('content');
+            $table->unsignedBigInteger('deptid');
             $table->foreign('deptid')->references('id')->on('departments');
             $table->string('faculty_id');
             $table->string('image');

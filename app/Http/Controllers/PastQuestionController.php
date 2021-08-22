@@ -73,7 +73,7 @@ class PastQuestionController extends Controller
                         $save_past_question->semester = $request->semester;
                         $save_past_question->coursecode = $request->coursecode;
                         $save_past_question->program = $request->program;
-                        // $save_past_question->page = $request->page;
+                        $save_past_question->page = $request->page;
                         $save_past_question->image = $nameToStore;
                         $save_past_question->userid = Auth::user()->id;
                         // return $save_past_question;

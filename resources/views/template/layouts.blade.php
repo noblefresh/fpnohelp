@@ -24,15 +24,6 @@
 <!-- CSS FILES -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-{{-- <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-<link rel="stylesheet" href="{{asset('assets/fonts/iconfont.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/swiper.min.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/venobox.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/select2.min.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-<link rel="stylesheet" href="{{asset('assets/css/color-1.css')}}"> --}}
 
 <script src="{{ asset('js/app.js') }}"></script>
 </head>
@@ -116,26 +107,6 @@
 </style>
     
 </div>
-<!-- #dtr-wrapper ends --> 
-<!-- JS FILES --> 
 
-{{-- <script src="assets/js/jquery.min.js" type="text/javascript" ></script>  --}}
-<script src="{{asset('assets/js/bootstrap.min.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/jquery.easing.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/swiper.min.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/venobox.min.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/select2.min.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/jquery.validate.min.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/jquery.form.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/wow.min.js')}}" type="text/javascript"></script> 
-<script src="{{asset('assets/js/custom.js')}}" type="text/javascript"></script> 
-<script>
-	// wow animations
-	if( $(window).outerWidth() >= 767 ) {
-		new WOW().init({
-			mobile: false,
-		});
-	}
-</script>
 </body>
 </html>
