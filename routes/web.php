@@ -22,7 +22,8 @@ Route::get('/terms', [App\Http\Controllers\PageController::class, 'terms'])->nam
 
 
 
-Auth::routes(['verify' => true]);
+// Auth::routes(['verify' => true]);
+Auth::routes();
 
 // USER DASHBOARD PAGE ROUTES
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

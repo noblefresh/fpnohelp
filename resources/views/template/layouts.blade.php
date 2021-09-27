@@ -20,6 +20,7 @@
 
 <link href="{{ asset('fontawesome-free-5/css/all.css')}}" rel="stylesheet" type="text/css">
 <link href="{{ asset('fontawesome-free-5/css/brands.css')}}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
 
 <!-- CSS FILES -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">

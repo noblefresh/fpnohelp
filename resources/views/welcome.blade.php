@@ -52,12 +52,12 @@
 
 
 <body class=" menu-full  ishome  isfullscreen  html"  data-header="light" data-footer="dark"  data-header_align="center"  data-menu_type="left" data-menu="light" data-menu_icons="on" data-footer_type="left" data-site_mode="light" data-footer_menu="show" data-footer_menu_style="light"  >
-    {{-- <div class="preloader-background">
+    <div class="preloader-background">
       <div class="preloader-wrapper">
         <div class="loader">
         </div>
       </div>
-    </div> --}}
+    </div>
   
 
 <!--  SIDEBAR - END -->
@@ -169,6 +169,6 @@ FPNO HELP
 <!-- END CORE TEMPLATE JS - END -->
 
 
-{{-- <script src="assets/js/preloader.js"></script> --}}
+<script src="assets/js/preloader.js"></script>
 </body>
 </html>
