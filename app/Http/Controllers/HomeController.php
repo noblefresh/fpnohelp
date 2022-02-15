@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\blog;
 use App\Models\User;
 use App\Models\quote;
+use App\Models\faculty;
 use App\Models\botbrain;
 use App\Models\donation;
+use App\Models\follower;
 use App\Models\imagebox;
+use App\Models\lecturer;
+use App\Models\department;
+use App\Models\practiceapp;
 use App\Models\user_access;
 use App\Models\pastquestion;
 use Illuminate\Http\Request;
@@ -319,6 +324,70 @@ class HomeController extends Controller
     // SMART BOT SECTION
     public function smartbot(){
         return view('users.smartbot');
+    }
+
+    // FIND A LECTURER
+    public function lecturer_find()
+    {
+        $getFaculty = faculty::orderBy('id','DESC')->get();
+        return view('users.lecturer_find', ['faculty'=>$getFaculty]);
+    }
+
+    // LECTURER DEPARTMENT
+    public function lecturer_department(Request $request)
+    {
+        $getDepartment = department::where('faculty_id',$request->id)->orderBy('id','DESC')->get();
+        return view('users.lecturer_department',['department'=>$getDepartment]);
+    }
+
+    // LECTURERS
+    public function lecturers($id)
+    {
+        $getLecturers = lecturer::where('deptid',$id)->orderBy('id','DESC')->get();
+        return view('users.lecturers',['lecturers'=>$getLecturers]);
+    }
+
+    // LECTURER
+    public function lecturer_view($id)
+    {
+        $getSelectedLecturer = lecturer::where('id',$id)->get();
+        $getFollower = follower::orderBy('id','DESC')->limit(1)->get();
+        return view('users.lecturer_view',['lecturer'=>$getSelectedLecturer, 'follower'=>$getFollower]);
+    }
+
+    // MANAGE LECTURER
+    public function manage_lecturer()
+    {
+        // For Restricted Pages
+        if(Auth::user()->level < 2){
+            return view('users.profile');
+        }else if(Auth::user()->level == 2){
+            return redirect('/home')->with('error','You are strictly restricted from accessing this page');
+        }else{
+            $getLecturer = lecturer::orderBy('id','DESC')->get();
+            return view('admin.manage_lecturer',['lecturer'=>$getLecturer]);
+        }
+    }
+
+    //PRACTICE APPS
+    public function practice_apps()
+    {
+        $getApps = practiceapp::orderBy('id','DESC')->get();
+        return view('users.practice_apps',['practiceapp'=>$getApps]);
+    }
+
+    // MANAGE LECTURER
+    public function manage_apps()
+    {
+        // For Restricted Pages
+        if(Auth::user()->level < 2){
+            return view('users.profile');
+        }else if(Auth::user()->level == 2){
+            return redirect('/home')->with('error','You are strictly restricted from accessing this page');
+        }else{
+            $getApps = practiceapp::orderBy('id','DESC')->get();
+            return view('admin.manage_apps',['practiceapp'=>$getApps]);
+        }
     }
 
     // ADMIN ALL PQ SUBSCRIBED PAGE

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en" class=" ">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -99,7 +98,7 @@ FPNO HELP
       
       </a>
         <a class="carousel-item" href="#carousel-slide-1!">
-      <div class="bg" style="background-image: url('images/slide-2.jpg')"></div>
+      <div class="bg" style="background-image: url('images/pic1.jpg')"></div>
       <div class="item-content center-align white-text">
 
                   <h3>A free access from your comfort zone</h3>

@@ -36,7 +36,11 @@ Route::get('/second-semester-pq', [App\Http\Controllers\HomeController::class, '
 Route::get('/smart-bot', [App\Http\Controllers\HomeController::class, 'smartbot'])->name('smartbot');
 Route::get('/account-setup', [App\Http\Controllers\HomeController::class, 'accountsetup']);
 Route::get('/app-download', [App\Http\Controllers\HomeController::class, 'appdownload'])->name('appdownload');
-// Route::get('/sample', [App\Http\Controllers\HomeController::class, 'sample'])->name('sample');
+Route::get('/find-a-lecturer', [App\Http\Controllers\HomeController::class, 'lecturer_find'])->name('lecturer_find');
+Route::get('/lecturer-department/{id}', [App\Http\Controllers\HomeController::class, 'lecturer_department']);
+Route::get('/lecturers/{id}', [App\Http\Controllers\HomeController::class, 'lecturers']);
+Route::get('/lecturer-view/{id}', [App\Http\Controllers\HomeController::class, 'lecturer_view'])->name('lecturer_view');
+Route::get('/practice-apps', [App\Http\Controllers\HomeController::class, 'practice_apps'])->name('practice_apps');
 
 
 
@@ -52,6 +56,8 @@ Route::get('/manage-blog', [App\Http\Controllers\HomeController::class, 'manageb
 Route::get('/all-quote', [App\Http\Controllers\HomeController::class, 'quotes'])->name('quote');
 Route::get('/image-box', [App\Http\Controllers\HomeController::class, 'imagebox'])->name('imagebox');
 Route::get('/bot-training', [App\Http\Controllers\HomeController::class, 'bottraining'])->name('bottraining');
+Route::get('/manage-lecturer', [App\Http\Controllers\HomeController::class, 'manage_lecturer'])->name('manage_lecturer');
+Route::get('/manage-apps', [App\Http\Controllers\HomeController::class, 'manage_apps'])->name('manage_apps');
 
 
 
@@ -85,6 +91,17 @@ Route::get('/get_reply', [App\Http\Controllers\SmartbotController::class, 'get_r
 Route::get('/reply_bot_unknown_message/{id}', [App\Http\Controllers\SmartbotController::class, 'show']);
 Route::post('/update_bot_unknown_message/{id}', [App\Http\Controllers\SmartbotController::class, 'update']);
 Route::get('/searchBotBrain', [App\Http\Controllers\SmartbotController::class, 'searchBotBrain']);
+Route::post('/save_lecturer', [App\Http\Controllers\LecturerController::class, 'store']);
+Route::get('/edit-lecturer/{id}', [App\Http\Controllers\LecturerController::class, 'show']);
+Route::post('/update_lecturer/{id}', [App\Http\Controllers\LecturerController::class, 'update']);
+Route::get('/delete_lecturer/{id}', [App\Http\Controllers\LecturerController::class, 'destroy']);
+Route::get('/follow/{id}', [App\Http\Controllers\FollowerController::class, 'follow']);
+Route::get('/unfollow/{id}', [App\Http\Controllers\FollowerController::class, 'unfollow']);
+Route::post('/save_app', [App\Http\Controllers\PracticeappController::class, 'store']);
+Route::get('/edit_app/{id}', [App\Http\Controllers\PracticeappController::class, 'show']);
+Route::post('/update_app/{id}', [App\Http\Controllers\PracticeappController::class, 'update']);
+Route::get('/delete_app/{id}', [App\Http\Controllers\PracticeappController::class, 'destroy']);
+
 
 
 

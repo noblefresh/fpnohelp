@@ -39,7 +39,8 @@
             <a href="{{route('manageblog')}}" class="quickLinkBtn shadow">Blog</a>
             <a href="{{route('bottraining')}}" class="quickLinkBtn shadow">Smart Bot</a>
             <a href="{{route('imagebox')}}" class="quickLinkBtn shadow">Image Box</a>
-            <a href="" class="quickLinkBtn shadow">Users</a>
+            <a href="{{ route('manage_lecturer') }}" class="quickLinkBtn shadow">Lecturers</a>
+            <a href="{{ route('manage_apps') }}" class="quickLinkBtn shadow">Apps</a>
             <a href="{{route('allpqsubscribed')}}" class="quickLinkBtn shadow">Subscription</a>
           </div>
         </div>
@@ -158,6 +159,8 @@
                                             Page {{ $pq->page }}
                                         @endif
                                       </span>
+
+                                    
                                       
                                       @if($pq->semester == '1')
                                       <span class=" badge badge-primary">1st Semester</span>

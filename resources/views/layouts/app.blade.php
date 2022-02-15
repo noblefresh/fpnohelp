@@ -161,7 +161,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <!-- <i class="right fas fa-angle-left"></i> -->
+                {{-- <i class="right fas fa-angle-left"></i> --}}
               </p>
             </a>
           </li>
@@ -252,6 +252,23 @@
               <i class="nav-icon fas fa-mobile-alt"></i>
               <p>
               Get Mobile App
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('lecturer_find') }}" class="nav-link">
+              <i class="nav-icon fas fa-user-tie"></i>
+              <p>
+              Find a Lecturer
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('practice_apps') }}" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+              CS Practice Apps
               </p>
             </a>
           </li>
